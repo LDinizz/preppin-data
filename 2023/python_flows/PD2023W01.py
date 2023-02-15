@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('../inputs/PD 2023 Wk 1 Input.csv')
+df = pd.read_csv('../inputs/PD2023W01.csv')
 
 ## Split Transaction code to Bank
 df['Bank'] = df['Transaction Code'].str.split('-', 1).str[0]
@@ -8,7 +8,7 @@ df_by_bank = df.groupby(['Bank'])['Value'].sum()
 ## By bank Output
 df_by_bank.to_csv('./outputs/PD2023W01_01.csv')
 
-df['Online or In-Person'] = df['Online or In-Person'].replace([1,2],['Online','In-Person'])
+df['Online or In-Person'] = df['Online or In-Person'].replace([21,],['Online','In-Person'])
 ## Transaction Date to Weekday
 df['Transaction Date'] = pd.to_datetime(df['Transaction Date'])
 df['Transaction Date'] = df['Transaction Date'].dt.day_name()

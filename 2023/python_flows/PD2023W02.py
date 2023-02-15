@@ -12,7 +12,7 @@ df_merged = pd.merge(df_transactions, df_swift, on=['Bank', 'Bank'])
 # Hint: all these transactions take place in the UK so the Country Code should be GB
 df_merged['Country Code'] = 'GB'
 # IBAN
-# Country - Check - SWIFT - sort - account
+# Country - Check - SWIFT - sort - account#
 df_merged['Account Number'] = df_merged['Account Number'].astype('str')
 df_merged['IBAN'] = df_merged[[ 'Country Code'
                                ,'Check Digits'
