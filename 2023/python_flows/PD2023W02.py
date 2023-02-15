@@ -19,4 +19,4 @@ df_merged['IBAN'] = df_merged[[ 'Country Code'
                                ,'SWIFT code'
                                ,'Sort Code'
                                ,'Account Number']].apply(''.join, axis=1)
-df_merged[['Transaction ID','IBAN']].to_csv('./outputs/PD2023W02.csv')
+df_merged[['Transaction ID','IBAN']].to_csv('./outputs/PD2023W02.csv',index=False)
